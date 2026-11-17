@@ -222,6 +222,7 @@ nav{bottom:calc(14px + env(safe-area-inset-bottom));max-width:calc(100% - 20px)}
 .rtr .ic.sm{width:28px;height:28px;border-radius:8px}.rtr .ic.sm svg.i{width:15px;height:15px}
 body.dark nav{background:#162313;box-shadow:0 14px 30px -10px #000;border:1px solid #2b3d26}body.dark nav button{color:#a9c79c}body.dark nav button.on{color:#0a0f09}
 .faq{background:var(--bg);border-radius:12px;padding:10px 12px;margin-top:6px}.faq summary{font-weight:700;font-size:13.5px;cursor:pointer;list-style:none}.faq summary::after{content:'+';float:right;color:var(--mut)}.faq[open] summary::after{content:'–'}.faq p{font-size:13px;color:var(--mut);margin-top:6px;line-height:1.45}
+.msg.a:has(.aib){max-width:100%}.aib{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:8px}.aib small{font-size:11px}.aig{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px}.aig div{background:var(--bg);border-radius:10px;padding:6px 7px;min-width:0}.aig b{display:block;font-size:14px}.aig small{color:var(--mut);font-size:10px;line-height:1.2;display:block}.aib .tag{position:static}
 </style>
 </head>
 <body>
@@ -546,14 +547,14 @@ function chStats(o){const {h,av,g7,sg,er,len,fr,earn,rk,ns,wt}=cs(o);
  ${o.me?'':`<button class="btn g" onclick="order('b',${BL.indexOf(o)})">${t('offer')}</button>`}`);setTimeout(()=>$('sheet').classList.add('go'),60)}
 function connP(p){if(S.conn[p]){S.conn[p]=false;render();return}toast(t('connecting',{p}));setTimeout(()=>{S.conn[p]=true;render();toast(t('connOk',{p}));myStats(p)},1400)}
 function myStats(p){chStats({n:S.name||'Me',p,sub:'48.2K',avg:12,cpm:9,me:1})}
-function aiOpen(){S.chat=S.chat||[['a',t('aiHi')]];
+function aiOpen(){const br=S.role==='brend';S.chat=S.chat&&S.chat.length&&S.chatR===S.role?S.chat:[['a',br?(AIL[S.lang]||AIL.uz).hi:t('aiHi')]];S.chatR=S.role;
  openM(`<div class="row" style="margin-bottom:10px">${T('spark','#5ED21C')}<div class="f"><h3>${t('aiT')}</h3><span class="mut">online</span></div></div>
- <div id="cht" style="max-height:45vh;overflow:auto">${S.chat.map(m=>`<div class="msg ${m[0]}">${m[1]}</div>`).join('')}</div>
- <div class="chips" style="margin-top:10px">${[1,2,3].map(n=>`<button class="chip" style="background:var(--gl);color:var(--gd)" onclick="aiAsk(t('aiQ${n}'),t('aiA${n}'))">${t('aiQ'+n)}</button>`).join('')}</div>
- <div class="row" style="gap:8px"><input type="text" id="aiIn" placeholder="${t('aiPh')}" onkeydown="if(event.key==='Enter')aiFree()"><button class="btn g xs" style="padding:13px" onclick="aiFree()">${I('right')}</button></div>`);
+ <div id="cht" style="max-height:55vh;overflow:auto">${S.chat.map(m=>`<div class="msg ${m[0]}">${m[1]}</div>`).join('')}</div>
+ <div class="chips" style="margin-top:10px">${br?(AIL[S.lang]||AIL.uz).ex.map((q,n)=>`<button class="chip" style="background:var(--gl);color:var(--gd)" onclick="aiAsk((AIL[S.lang]||AIL.uz).ex[${n}],aiMatch((AIL[S.lang]||AIL.uz).ex[${n}]))">${q}</button>`).join(''):[1,2,3].map(n=>`<button class="chip" style="background:var(--gl);color:var(--gd)" onclick="aiAsk(t('aiQ${n}'),t('aiA${n}'))">${t('aiQ'+n)}</button>`).join('')}</div>
+ <div class="row" style="gap:8px"><input type="text" id="aiIn" placeholder="${br?(AIL[S.lang]||AIL.uz).ph:t('aiPh')}" onkeydown="if(event.key==='Enter')aiFree()"><button class="btn g xs" style="padding:13px" onclick="aiFree()">${I('right')}</button></div>`);
  const c=$('cht');if(c)c.scrollTop=1e5}
 function aiAsk(q,a){S.chat.push(['u',q]);aiOpen();setTimeout(()=>{S.chat.push(['a',a]);aiOpen()},700)}
-function aiFree(){const v=$('aiIn').value.trim();if(v)aiAsk(v.replace(/[<>]/g,''),t('aiDef'))}
+function aiFree(){const v=$('aiIn').value.trim().replace(/[<>]/g,'');if(v)aiAsk(v,S.role==='brend'?aiMatch(v):t('aiDef'))}
 function pdfM(){const b=S.role==='bloger';
  openM(`<h3>${t('pdfT')}</h3><p class="mut">Viewfy · ${S.name||t('guest')} · ${new Date().toLocaleDateString()}</p>
  <div class="card" style="border:1px solid var(--line);box-shadow:none;margin-top:12px">
@@ -734,6 +735,59 @@ function supM(){const q=[1,2,3,4];openM(`<div class="row" style="margin-bottom:6
  <p class="mut" style="font-size:12px;text-align:center;margin-top:8px">${t('supNote')}</p>`)}
 function supSend(){const v=($('supT').value||'').trim();if(v.length<3){toast(t('supEmpty'));return}const m=`Viewfy · ${S.name||''} (${t(S.role==='brend'?'brandAcc':'blogAcc2')}):\n${v}`;window.open('https://t.me/'+SUPPORT+'?text='+encodeURIComponent(m),'_blank');closeM();toast(t('supOk'))}
 const SUPPORT='fin_bexruz';
+/* ===== AI matchmaking for advertisers (on-device rules; real app uses an LLM + live API data) ===== */
+BL.push(
+ {n:'Gadget Uz',tr:95,rt:4.8,rc:52,p:'YouTube',sub:'410K',avg:95,cpm:0,cat:1},
+ {n:'Telefon Bozori',tr:92,rt:4.6,rc:38,p:'Telegram',sub:'260K',avg:70,cpm:0,cat:1},
+ {n:'TechTok Uz',tr:90,rt:4.5,rc:21,p:'TikTok',sub:'680K',avg:180,cpm:0,cat:1},
+ {n:'Oshxona Uz',tr:97,rt:4.9,rc:64,p:'Instagram',sub:'350K',avg:90,cpm:0,cat:0},
+ {n:'Mazali Toshkent',tr:93,rt:4.7,rc:30,p:'TikTok',sub:'520K',avg:160,cpm:0,cat:0},
+ {n:'FitLife Uz',tr:94,rt:4.7,rc:27,p:'Instagram',sub:'190K',avg:55,cpm:0,cat:4},
+ {n:'Ingliz Oson',tr:99,rt:4.9,rc:73,p:'YouTube',sub:'780K',avg:140,cpm:0,cat:6},
+ {n:'Biznes Maktab',tr:96,rt:4.8,rc:44,p:'Telegram',sub:'150K',avg:45,cpm:0,cat:7},
+ {n:'Sayyoh Uz',tr:91,rt:4.6,rc:19,p:'YouTube',sub:'230K',avg:60,cpm:0,cat:9});
+BL.forEach(b=>{if(!b.cpm)b.cpm=+(rt(b.cat,b.p,BA[b.p])*(.9+(b.tr%5)*.08)).toFixed(2)});
+const KW=[['ovqat','oshxona','kafe','restoran','food','pizza','burger','shirin','tort','еда','кафе','ресторан','доставк','fastfood','lavash'],
+['telefon','texnika','noutbuk','gadjet','gadget','phone','smartfon','kompyuter','техник','телефон','электрон','laptop','maishiy'],
+['kiyim','moda','poyabzal','fashion','butik','одежд','обув','мода','sumka'],
+['kosmetik','go‘zallik',"go'zallik",'salon','beauty','parfyum','косметик','салон','красот','soch'],
+['sport','fitnes','fitness','zal','gym','спорт','фитнес','trenajyor'],
+['o‘yin',"o'yin",'game','gaming','pubg','игр','киберспорт'],
+['kurs','ta’lim',"ta'lim",'o‘quv',"o'quv",'ingliz','maktab','education','course','курс','обучен','школ','repetitor','ielts'],
+['biznes','business','бизнес','b2b','buxgalter','marketing','startap','startup'],
+['kulgu','yumor','юмор','comedy','prikol'],
+['sayohat','travel','tur ','mehmonxona','hotel','путешеств','тур','avia']];
+function aiParse(q){const s=' '+q.toLowerCase()+' ';let cat=-1,best=0;KW.forEach((k,i)=>{const n=k.filter(w=>s.includes(w)).length;if(n>best){best=n;cat=i}});
+ let pl=PLS.filter(p=>s.includes(p.toLowerCase())||(p==='Instagram'&&/insta|инст/.test(s))||(p==='Telegram'&&/телег|tg /.test(s))||(p==='YouTube'&&/ютуб|yutub/.test(s))||(p==='TikTok'&&/тикток|tik tok/.test(s)));
+ let b=0;const m=s.match(/(\d[\d\s.,]*)\s*(mln|млн|million)?\s*(\$|dollar|доллар|usd|so‘m|so'm|som|сум|sum)/)||s.match(/(\$)\s*(\d[\d.,]*)/);
+ if(m){if(m[1]==='$'){b=+m[2].replace(/[\s,]/g,'')}else{let v=+m[1].replace(/[\s,]/g,'');if(m[2])v*=1e6;b=/so|сум|sum/.test(m[3])?v/12800:v}}
+ const subs=/obunach|подписч|follower|subscri/.test(s),sales=/sotuv|mijoz|xaridor|клиент|продаж|sales|customer|buyer/.test(s);
+ return {cat,pl,b:Math.round(b)||200,bSet:!!b,subs,sales}}
+function aiPredict(o,B,p){const v1=o.avg*1000,cpm=o.cpm,maxV=v1*1.15,views=Math.min(Math.round(B/cpm*1000),Math.round(maxV*3)),vids=Math.max(1,Math.ceil(views/maxV)),cost=+(views/1000*cpm).toFixed(0),
+ fr=o.p==='YouTube'?.006:o.p==='Instagram'?.008:o.p==='TikTok'?.004:.003,clk=o.p==='Telegram'?.025:o.p==='YouTube'?.012:.009;
+ return {views,uniq:Math.round(views*.72),vids,cost,subs:Math.round(views*fr),clicks:Math.round(views*clk),cust:Math.max(1,Math.round(views*clk*.03))}}
+function aiMatch(q){const P=aiParse(q),A=AIL[S.lang]||AIL.uz,cn=P.cat>=0?catN(P.cat):A.any;
+ let list=BL.map((o,i)=>({o,i,sc:(P.cat>=0&&o.cat===P.cat?5:0)+(P.pl.length&&P.pl.includes(o.p)?3:P.pl.length?-2:0)+o.tr/50+o.rt/2})).sort((a,b)=>b.sc-a.sc).slice(0,3);
+ const w=[.45,.35,.2],cards=list.map((x,k)=>{const o=x.o,B=Math.round(P.b*w[k]),r=aiPredict(o,B,P),why=[P.cat>=0&&o.cat===P.cat?A.wCat(cn):'',P.pl.includes(o.p)?A.wPl(o.p):'',o.tr>=95?A.wTr(o.tr):''].filter(Boolean).join(' · ')||A.wGen;
+  return `<div class="aib"><div class="row">${pT(o.p)}<div class="f"><b>${o.n}</b><small class="mut">${o.p} · ${catN(o.cat)} · ${o.sub} ${A.subsW} · ★ ${o.rt}</small></div><span class="tag">$${B}</span></div>
+  <div class="aig"><div><b>${N(o.avg*1000)}</b><small>${A.perVid}</small></div><div><b>${N(r.views)}</b><small>${A.views}</small></div><div><b>+${N(r.subs)}</b><small>${A.subs}</small></div><div><b>${N(r.clicks)}</b><small>${A.clicks}</small></div><div><b>~${N(r.cust)}</b><small>${A.cust}</small></div><div><b>$${o.cpm}</b><small>RPM</small></div></div>
+  <small class="mut" style="display:block;margin-top:6px">✓ ${why} · ${A.vids(r.vids)}</small>
+  <button class="btn g xs" style="margin-top:8px;width:100%" onclick="closeM();order('b',${x.i})">${A.offer}</button></div>`}),
+ tot=list.reduce((a,x,k)=>{const r=aiPredict(x.o,Math.round(P.b*w[k]));a.v+=r.views;a.s+=r.subs;a.c+=r.clicks;a.m+=r.cust;return a},{v:0,s:0,c:0,m:0});
+ return `<b>${A.found(cn,P.b,P.bSet)}</b>${cards.join('')}<div class="aib" style="background:var(--gl)"><b>${A.total}</b><div class="aig"><div><b>${N(tot.v)}</b><small>${A.views}</small></div><div><b>+${N(tot.s)}</b><small>${A.subs}</small></div><div><b>~${N(tot.m)}</b><small>${A.cust}</small></div></div><small class="mut">${A.note}</small></div>`}
+const AIL={uz:{any:'barcha sohalar',subsW:'obunachi',perVid:'1 videoda o‘rtacha',views:'kutilgan ko‘rish',subs:'sizga obunachi',clicks:'bosish',cust:'mijoz',offer:'Taklif yuborish',total:'Jami reja bo‘yicha',
+ found:(c,b,s)=>`“${c}” uchun ${s?'$'+b+' byudjetga':'$'+b+' (taxminiy) byudjetga'} 3 ta eng mos bloger:`,wCat:c=>`${c} auditoriyasi`,wPl:p=>`${p} so‘radingiz`,wTr:x=>`${x}% halol ko‘rish`,wGen:'yuqori reyting',vids:n=>`${n} ta video kerak`,
+ note:'Taxmin: oxirgi videolar statistikasi asosida. Haqiqiy natija reklama sifatiga bog‘liq.',hi:'Salom! Biznesingiz haqida yozing — men ilovadan mos blogerlarni topib, har biri qancha ko‘rish, obunachi va mijoz olib kelishini hisoblab beraman.',
+ ph:'Biznesingiz, byudjet va platforma...',ex:['Toshkentda telefon do‘konim bor, $200 byudjet','Kafe uchun Instagram va TikTok, 2 mln so‘m','Ingliz tili kursiga o‘quvchi kerak, $300, obunachi ko‘paysin']},
+ru:{any:'все ниши',subsW:'подписчиков',perVid:'в среднем за видео',views:'ожидаемые просмотры',subs:'подписчиков вам',clicks:'кликов',cust:'клиентов',offer:'Отправить предложение',total:'Итого по плану',
+ found:(c,b,s)=>`Для «${c}» на бюджет $${b}${s?'':' (примерно)'} — 3 лучших блогера:`,wCat:c=>`аудитория «${c}»`,wPl:p=>`вы выбрали ${p}`,wTr:x=>`${x}% честных просмотров`,wGen:'высокий рейтинг',vids:n=>`нужно видео: ${n}`,
+ note:'Прогноз по статистике последних видео. Реальный результат зависит от качества рекламы.',hi:'Здравствуйте! Опишите ваш бизнес — я найду подходящих блогеров и посчитаю, сколько просмотров, подписчиков и клиентов принесёт каждый.',
+ ph:'Ваш бизнес, бюджет и платформа...',ex:['Магазин телефонов в Ташкенте, бюджет $200','Кафе, Instagram и TikTok, 2 млн сум','Курсы английского, $300, нужны подписчики']},
+en:{any:'all niches',subsW:'followers',perVid:'avg per video',views:'expected views',subs:'new followers for you',clicks:'clicks',cust:'customers',offer:'Send offer',total:'Plan total',
+ found:(c,b,s)=>`Top 3 creators for “${c}” on a $${b}${s?'':' (estimated)'} budget:`,wCat:c=>`${c} audience`,wPl:p=>`you asked for ${p}`,wTr:x=>`${x}% real views`,wGen:'high rating',vids:n=>`${n} video(s) needed`,
+ note:'Forecast based on recent video stats. Real results depend on the ad itself.',hi:'Hi! Describe your business — I’ll find matching creators and estimate the views, followers and customers each one can bring.',
+ ph:'Your business, budget and platform...',ex:['Phone store in Tashkent, $200 budget','Cafe, Instagram and TikTok, 2 mln sum','English course, $300, want more followers']}};
+
 /* demo data priced with the RPM table */
 S.camps.forEach(c=>{if(RT[c.pl])c.cpm=+(rt(c.cat,c.pl,c.at)*(DM[c.dur]||1)*(c.at==='ovl'?SZ[c.lsz||'150×150']||1:1)).toFixed(2)});
 BL.forEach(b=>{b.cpm=+(rt(b.cat,b.p,BA[b.p])*(.9+(b.tr%5)*.08)).toFixed(2)});
