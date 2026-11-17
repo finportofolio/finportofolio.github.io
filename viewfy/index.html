@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Viewfy — investor prezentatsiyasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>:root{--dk:#0a0f09;--dk2:#131b11;--lt:#f4f7f1;--lt2:#e4ecdc;--ac:#5ed21c;--acd:#2b7a10;--or:#f59e0b;--ink:#141a12;--mt:#5d6a58;--mtd:#a3b09d}
+section{font-family:Inter,sans-serif;background:var(--lt);color:var(--ink);padding:128px;display:flex;flex-direction:column;gap:44px}
+section.dark{background:var(--dk);color:#eef3ea}
+section.green{background:var(--ac);color:var(--dk)}
+section.hasfoot{padding:128px 128px 160px}
+h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:132px;line-height:1.02;letter-spacing:-0.035em;margin:0}
+h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:72px;line-height:1.08;letter-spacing:-0.02em;margin:0}
+h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:38px;line-height:1.2;margin:0}
+p{font-size:30px;line-height:1.45;margin:0}
+.kicker{font-size:26px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--acd)}
+.dark .kicker{color:var(--ac)}
+.lead{font-size:38px;line-height:1.4;max-width:1300px}
+.mut{color:var(--mt)}
+.dark .mut{color:var(--mtd)}
+.row{display:flex;gap:32px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.card{background:#fbfdf8;border-radius:32px;padding:44px;display:flex;flex-direction:column;gap:18px;box-shadow:0 10px 40px rgba(20,40,10,0.06)}
+.dark .card{background:var(--dk2);box-shadow:none;border:1px solid #243220}
+.card.hi{background:var(--ac);color:var(--dk)}
+.card.hi .mut{color:#24451a}
+.card .ic{width:76px;height:76px;border-radius:22px;background:var(--dk);color:var(--ac);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700}
+.dark .card .ic{background:var(--ac);color:var(--dk)}
+.card.hi .ic{background:var(--dk);color:var(--ac)}
+.big{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:104px;line-height:1;letter-spacing:-0.03em;margin:0}
+.big.ac{color:var(--acd)}
+.dark .big.ac{color:var(--ac)}
+.pill{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:10px 22px;border-radius:40px;background:var(--lt2);font-size:24px;font-weight:700;color:var(--acd)}
+.dark .pill{background:#1e2c19;color:var(--ac)}
+.foot{position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between;font-size:24px;color:var(--mt)}
+.dark .foot{color:var(--mtd)}
+.bar{height:28px;border-radius:14px;background:var(--lt2)}
+.bar i{display:block;height:28px;border-radius:14px;background:var(--acd)}
+.dark .bar{background:#22301d}.dark .bar i{background:var(--ac)}
+table{border-collapse:collapse;width:1664px}
+th,td{font-size:26px;text-align:left;padding:18px 20px;border-bottom:2px solid var(--lt2)}
+th{font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--mt)}
+td.y{color:var(--acd);font-weight:700}
+td.n{color:#b45309}
+tr.us td{background:#e3f6d4;font-weight:700}
+.step{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;width:64px;height:64px;border-radius:50%;background:var(--ac);color:var(--dk);display:flex;align-items:center;justify-content:center}
+.card,.anim{animation:rise 0.6s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.2s}.d3{animation-delay:0.3s}.d4{animation-delay:0.4s}.d5{animation-delay:0.5s}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+section.dark{background:radial-gradient(1200px 700px at 85% -10%,#1d3a12 0%,rgba(10,15,9,0) 60%),var(--dk)}
+.card{border:1px solid #e1e9d9}
+.dark .card{border:1px solid #223020}
+.brandfoot{display:flex;align-items:center;gap:12px}
+.brandfoot p{font-size:24px}
+.phone{width:400px;height:800px;border-radius:56px;background:#0a0f09;padding:12px;box-shadow:0 50px 90px rgba(5,10,4,0.45),0 0 0 2px #2b3a27;flex:none;animation:phoneIn 0.9s cubic-bezier(.2,.8,.2,1) both}
+.phone.p2{animation-delay:0.25s}
+.scr{width:376px;height:776px;border-radius:46px;background:#f1f5ee;overflow:hidden;display:flex;flex-direction:column;gap:12px;padding:30px 16px 16px;position:relative}
+.scr p{font-size:24px;line-height:1.2;margin:0}
+.scr .t{font-size:24px;font-weight:700}
+.scr .s{color:#6b7866}
+.scr .cardu{background:#ffffff;border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.scr .hero{background:linear-gradient(135deg,#2c7a17,#123d0b);border-radius:26px;padding:18px;display:flex;flex-direction:column;gap:6px;color:#fff}
+.scr .hero .n{font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:700;line-height:1}
+.scr .tg{align-self:flex-start;background:#e9f9df;color:#1f5d12;border-radius:20px;padding:4px 12px;font-size:24px;font-weight:700}
+.scr .live{align-self:flex-start;background:#fee2e2;color:#b91c1c;border-radius:20px;padding:4px 12px;font-size:24px;font-weight:800}
+.scr .nav{position:absolute;left:40px;right:40px;bottom:18px;height:64px;border-radius:34px;background:#1f5d12;display:flex;align-items:center;justify-content:space-around}
+.scr .nav i{display:block;width:26px;height:26px;border-radius:8px;background:#cfe9c3}
+.scr .nav i.on{width:70px;border-radius:20px;background:#5ed21c}
+.scr .ub{height:12px;border-radius:6px;background:#e4eadf}
+.scr .ub i{display:block;height:12px;border-radius:6px;background:#5ed21c}
+.scr .r{display:flex;align-items:center;gap:10px}
+.scr .av{width:44px;height:44px;border-radius:14px;flex:none}
+.scr .g2u{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.nb{display:inline-flex;width:40px;height:40px;border-radius:50%;background:#5ed21c;color:#0a0f09;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;align-items:center;justify-content:center;flex:none;box-shadow:0 0 0 6px rgba(94,210,28,0.25)}
+.callouts{display:flex;flex-direction:column;gap:26px;width:620px}
+.co{display:flex;gap:20px;align-items:flex-start;animation:rise 0.6s cubic-bezier(.2,.8,.2,1) both}
+.co h3{font-size:32px;margin-bottom:6px}
+.co p{font-size:26px}
+.co.d1{animation-delay:0.5s}.co.d2{animation-delay:0.7s}.co.d3{animation-delay:0.9s}.co.d4{animation-delay:1.1s}
+@keyframes phoneIn{from{opacity:0;transform:translateY(60px) rotate(-2deg)}to{opacity:1;transform:none}}
+.glow{animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(94,210,28,0.35)}50%{box-shadow:0 0 0 18px rgba(94,210,28,0)}}
+
+.scr{padding:26px 14px 96px;gap:10px}
+.scr .hero{padding:16px;gap:4px}
+.scr .hero .n{font-size:44px}
+.scr .cardu{padding:13px 14px;gap:6px}
+
+@page{size:1920px 1080px;margin:0}html,body{margin:0;background:#222}
+section{width:1920px;height:1080px;box-sizing:border-box;position:relative;overflow:hidden;page-break-after:always;break-after:page}
+aside{display:none}*{animation:none!important;transition:none!important}.anim,[class*="d1"],[class*="d2"],[class*="d3"],[class*="d4"]{opacity:1!important;transform:none}
+@media screen{body{display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px 0}section{zoom:calc(min(100vw,1920px)/1920)}}
+</style></head><body><section id="cover" class="dark" style="justify-content:space-between">
+<div class="row anim" style="align-items:center;gap:24px"><svg width="84" height="84" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M44 74 L92 144 L138 74" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M162 38 L159 84 L121 62 Z" fill="#111411" stroke="#111411" stroke-width="8" stroke-linejoin="round"/></svg><p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:56px;line-height:1;letter-spacing:-0.03em;color:#eef3ea">view<span style="color:#5ed21c">fy</span></p></div>
+<div style="display:flex;flex-direction:column;gap:36px">
+<p class="kicker anim d1">Investor prezentatsiyasi · 2026</p>
+<h1 class="anim d2" style="width:1560px">Har bir <span style="color:#5ed21c">ko‘rish</span> — o‘sish.<br>Har bir to‘lov — kafolatli.</h1>
+<p class="lead mut anim d3">Viewfy brendlarni blogerlar bilan bog‘laydi: brend faqat tekshirilgan haqiqiy ko‘rishlar uchun to‘laydi, bloger esa pulini kafolat bilan oladi.</p></div>
+<div class="row anim d4" style="gap:16px;align-items:center"><span class="pill">YouTube</span><span class="pill">Instagram</span><span class="pill">TikTok</span><span class="pill">Telegram</span><span class="pill">Twitch</span><span class="pill" style="background:#5ed21c;color:#0a0f09">Ishlaydigan prototip tayyor</span></div>
+<aside>Salom. Men Bexruz Xasanboyev, Viewfy asoschisiman.</aside>
+</section><section id="problem" class="hasfoot">
+<p class="kicker">Muammo</p>
+<h2 style="width:1500px">Bloger reklamasi bugun qo‘lda, qimmat va natijasi kafolatsiz</h2>
+<div class="grid3">
+<div class="card d1"><div class="ic">1</div><h3>Natija noma’lum</h3><p class="mut">Brend postga oldindan to‘laydi, lekin necha kishi ko‘rgani va soxta ko‘rishlar bor-yo‘qligini bilmaydi.</p></div>
+<div class="card d2"><div class="ic">2</div><h3>Qo‘lda kelishuv</h3><p class="mut">Har bir bloger bilan lichkada narx kelishiladi, agentlik o‘z ulushini qo‘shadi, jarayon kunlab cho‘ziladi.</p></div>
+<div class="card d3"><div class="ic">3</div><h3>Ishonch yo‘q</h3><p class="mut">Bloger pulini ololmay qolishi, brend esa reklama umuman chiqmay qolishi mumkin. Kafil tomon yo‘q.</p></div>
+</div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span></span><span>2</span></div>
+</section><section id="solution" class="green" style="justify-content:center">
+<p class="kicker" style="color:#1d3d12">Yechim</p>
+<h1 style="font-size:112px;width:1600px">Ko‘rishga qarab to‘lov.<br>Pul ilovada turadi.<br>Natija tekshiriladi.</h1>
+<p class="lead" style="color:#1d3d12">Brend 1000 ko‘rish narxini (RPM) va byudjetni belgilaydi. Bloger reklamani joylaydi. Viewfy ko‘rishlarni platforma API’si orqali sanaydi va pulni faqat tasdiqlangan ko‘rishlar uchun o‘tkazadi.</p>
+</section><section id="how" class="hasfoot">
+<p class="kicker">Qanday ishlaydi</p>
+<h2>Uch qadam — ikki tomon uchun</h2>
+<div class="grid2">
+<div class="card d1"><h3>🏢 Brend</h3>
+<div class="row" style="align-items:center;gap:20px"><div class="step">1</div><p>Balansni to‘ldiradi (Click, Payme)</p></div>
+<div class="row" style="align-items:center;gap:20px"><div class="step">2</div><p>Reklama turi, RPM va byudjetni tanlaydi</p></div>
+<div class="row" style="align-items:center;gap:20px"><div class="step">3</div><p>Natijani jonli kuzatadi, qoldiq qaytadi</p></div></div>
+<div class="card hi d2"><h3>🎥 Bloger</h3>
+<div class="row" style="align-items:center;gap:20px"><div class="step" style="background:#0d130b;color:#5ed21c">1</div><p>Akkauntini ulaydi, admin tasdiqlaydi</p></div>
+<div class="row" style="align-items:center;gap:20px"><div class="step" style="background:#0d130b;color:#5ed21c">2</div><p>Reklamani videoga yoki postga qo‘shadi</p></div>
+<div class="row" style="align-items:center;gap:20px"><div class="step" style="background:#0d130b;color:#5ed21c">3</div><p>Ko‘rishlar uchun 85% ni oladi</p></div></div>
+</div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span></span><span>4</span></div>
+</section><section id="uibrand" class="dark" style="flex-direction:row;align-items:center;gap:64px">
+<div class="callouts">
+<p class="kicker">Ilova · Brend tomoni</p>
+<h2 style="font-size:60px">Brend pulini qayerga ketganini soniyama-soniya ko‘radi</h2>
+<div class="co d1"><span class="nb">1</span><div><h3>Jami ko‘rishlar</h3><p class="mut">Sarflangan va qolgan byudjet bir qarashda</p></div></div>
+<div class="co d2"><span class="nb">2</span><div><h3>Arizalar</h3><p class="mut">Blogerlar o‘zi qo‘shilish so‘raydi, brend tanlaydi</p></div></div>
+<div class="co d3"><span class="nb">3</span><div><h3>Jonli grafik</h3><p class="mut">Ko‘rish, obunachi va bosishlar real vaqtda</p></div></div>
+<div class="co d4"><span class="nb">4</span><div><h3>Pulni qaytarish</h3><p class="mut">Ishlatilmagan pul brendga avtomatik qaytadi</p></div></div>
+</div>
+<div class="phone "><div class="scr"><div class="r"><div class="av" style="background:#2b7a10;border-radius:50%"></div><div><p class="s">Brend kabineti</p><p class="t">Pepsi</p></div></div>
+<div class="hero"><p style="opacity:.8">Jami ko‘rishlar</p><div class="r"><p class="n">48 600</p><span class="nb">1</span></div><p style="opacity:.85">$243 sarflandi · $57 qoldi</p></div>
+<div class="cardu"><div class="r"><div class="av" style="background:#f59e0b"></div><p class="t" style="flex:1">Arizalar</p><span class="nb">2</span></div><p class="s">3 bloger qo‘shilmoqchi</p></div>
+<div class="cardu"><div class="r"><div class="av" style="background:#ef4444"></div><p class="t" style="flex:1">Pepsi · Shorts</p><span class="live">● Jonli</span></div><div class="ub"><i style="width:62%"></i></div><p class="s">2/5 bloger · $62 / $100</p></div><div class="g2u"><div class="cardu" style="align-items:center"><div class="av" style="background:#ef4444"></div><p class="s">Blogerlar</p></div><div class="cardu" style="align-items:center"><div class="av" style="background:#0ea5e9"></div><p class="s">Saytlar</p></div></div><div class="nav"><i class="on"></i><i></i><i></i><i></i></div></div></div><div class="phone p2"><div class="scr"><div class="r"><p class="t" style="flex:1">Jonli kuzatuv</p><span class="live">● Live</span></div>
+<div class="g2u"><div class="cardu"><p class="s">Ko‘rishlar</p><p class="t" style="font-size:32px">12 480</p></div><div class="cardu"><p class="s">Obunachi</p><p class="t" style="font-size:32px">+148</p></div></div>
+<div class="cardu"><div class="r"><p class="t" style="flex:1">Grafik</p><span class="nb">3</span></div>
+<svg width="320" height="110" viewBox="0 0 320 110" aria-label="O‘sib boruvchi ko‘rishlar grafigi"><path d="M0 95 L40 88 L80 80 L120 70 L160 66 L200 50 L240 40 L280 26 L320 12 L320 110 L0 110 Z" fill="#5ed21c" fill-opacity="0.2"/><path d="M0 95 L40 88 L80 80 L120 70 L160 66 L200 50 L240 40 L280 26 L320 12" fill="none" stroke="#5ed21c" stroke-width="5"/></svg></div>
+<div class="cardu"><div class="r"><p class="t" style="flex:1">Qoldiqni qaytarish</p><span class="nb">4</span></div><p class="s">$38 balansga qaytadi</p></div><div class="cardu"><div class="r"><div class="av" style="background:#ef4444"></div><p class="t" style="flex:1">Aziz Vlog</p><p class="s">7 240</p></div><div class="r"><div class="av" style="background:#111411"></div><p class="t" style="flex:1">Kulgu Uz</p><p class="s">5 240</p></div></div><div class="nav"><i class="on"></i><i></i><i></i><i></i></div></div></div>
+<aside>Brend uchun eng muhimi — nazorat va shaffoflik.</aside>
+</section><section id="uicreator" style="flex-direction:row;align-items:center;gap:64px">
+<div class="callouts">
+<p class="kicker">Ilova · Bloger tomoni</p>
+<h2 style="font-size:60px">Bloger qancha ishlashini oldindan biladi</h2>
+<div class="co d1"><span class="nb">1</span><div><h3>Balans va daromad</h3><p class="mut">85% blogerga, kartaga 1–3 kunda</p></div></div>
+<div class="co d2"><span class="nb">2</span><div><h3>Shaxsiy RPM</h3><p class="mut">Soha va platformaga qarab 1000 ko‘rish narxi</p></div></div>
+<div class="co d3"><span class="nb">3</span><div><h3>Takliflar</h3><p class="mut">Brendlar o‘zi topadi: qabul, rad yoki o‘z narxi</p></div></div>
+<div class="co d4"><span class="nb">4</span><div><h3>Adolatli narx shkalasi</h3><p class="mut">Ikki tomon ham arzon-qimmatni ko‘rib turadi</p></div></div>
+</div>
+<div class="phone "><div class="scr"><div class="r"><div class="av" style="background:#2b7a10;border-radius:50%"></div><div><p class="s">Xush kelibsiz</p><p class="t">Aziz</p></div></div>
+<div class="hero"><p style="opacity:.8">Balans</p><div class="r"><p class="n">$340.20</p><span class="nb">1</span></div><p style="opacity:.85">↑ 18% shu hafta</p></div>
+<div class="cardu"><div class="r"><p class="t" style="flex:1">Sizning RPM</p><span class="nb">2</span></div><div class="g2u"><p class="t" style="color:#2b7a10">$3.6</p><p class="t" style="color:#2b7a10">$2.4</p></div><p class="s">YouTube · Telegram</p></div>
+<div class="cardu" style="border:2px solid #5ed21c"><div class="r"><p class="t" style="flex:1">Takliflar</p><span class="nb">3</span></div><p class="s">Coca-Cola · $5.5 / 1000</p></div><div class="cardu"><div class="r"><div class="av" style="background:#1d4ed8"></div><div style="flex:1"><p class="t">Pepsi · Shorts</p><p class="s">RPM $5 · 20K → ~$85</p></div></div><div style="align-self:stretch;background:#5ed21c;border-radius:16px;padding:10px;text-align:center"><p class="t">Qo‘shilish</p></div></div><div class="nav"><i class="on"></i><i></i><i></i><i></i></div></div></div><div class="phone p2"><div class="scr"><p class="t">Coca-Cola taklifi</p>
+<div class="cardu"><p class="s">1000 ko‘rish uchun</p><p class="t" style="font-size:44px;color:#2b7a10">$5.5</p><p class="s">Kirish so‘zi · 5 s, bloger aytadi</p></div>
+<div class="cardu"><div class="r"><p class="t" style="flex:1">Narx bahosi</p><span class="nb">4</span></div><div style="height:14px;border-radius:7px;background:linear-gradient(90deg,#fbbf24 0 40%,#5ed21c 40% 65%,#f87171 65% 100%)"></div><p class="s" style="color:#2b7a10;font-weight:700">✓ Adolatli</p></div>
+<div class="g2u"><div class="cardu" style="align-items:center"><p class="t">O‘z narxim</p></div><div class="cardu" style="align-items:center;background:#5ed21c"><p class="t">Qabul</p></div></div><div class="cardu"><p class="s">Video chizig‘i</p><div style="height:44px;border-radius:12px;background:#1f2937;position:relative"><div style="position:absolute;left:8px;top:16px;width:60px;height:12px;border-radius:6px;background:#5ed21c"></div></div><p class="s">Bloger 5 s o‘zi aytadi · Paid promotion ✓</p></div><div class="cardu"><div class="r"><p class="s" style="flex:1">Byudjet</p><p class="t">$200</p></div><div class="r"><p class="s" style="flex:1">Sizga 85%</p><p class="t" style="color:#2b7a10">$170</p></div></div><div class="nav"><i class="on"></i><i></i><i></i><i></i></div></div></div>
+</section><section id="uistats" class="dark" style="flex-direction:row;align-items:center;gap:64px">
+<div class="callouts">
+<p class="kicker">Ilova · Ishonch</p>
+<h2 style="font-size:60px">Raqamlar platformadan olinadi, aldab bo‘lmaydi</h2>
+<div class="co d1"><span class="nb">1</span><div><h3>Kanal statistikasi</h3><p class="mut">Ko‘rish, obunachi, ko‘rish vaqti — API orqali</p></div></div>
+<div class="co d2"><span class="nb">2</span><div><h3>Auditoriya</h3><p class="mut">Davlat, yosh va jins — brend kimga reklama qilishini biladi</p></div></div>
+<div class="co d3"><span class="nb">3</span><div><h3>AI tekshiruv</h3><p class="mut">Klip, logo va “Reklama” belgisi avtomatik tekshiriladi</p></div></div>
+<div class="co d4"><span class="nb">4</span><div><h3>Ishonch balli</h3><p class="mut">Qoida buzilsa: ogohlantirish → blok → chetlatish</p></div></div>
+</div>
+<div class="phone "><div class="scr"><div class="r"><span class="nb">1</span><div class="av" style="background:#ef4444"></div><div><p class="t">Aziz Vlog</p><p class="s">YouTube · API</p></div></div>
+<div class="g2u"><div class="cardu"><p class="s">Yangi ko‘rish</p><p class="t">+323K</p></div><div class="cardu"><p class="s">Obunachi</p><p class="t">320K</p></div>
+<div class="cardu"><p class="s">Ko‘rish vaqti</p><p class="t">44 s</p></div><div class="cardu"><p class="s">Haftasiga</p><p class="t">~7 video</p></div></div>
+<div class="cardu"><div class="r"><p class="t" style="flex:1">Auditoriya</p><span class="nb">2</span></div><div class="r"><p class="s" style="width:60px">🇺🇿</p><div class="ub" style="flex:1"><i style="width:72%"></i></div><p class="s">72%</p></div><div class="r"><p class="s" style="width:60px">18–24</p><div class="ub" style="flex:1"><i style="width:38%"></i></div><p class="s">38%</p></div></div><div class="cardu"><p class="t">Jins</p><div style="display:flex;height:14px;border-radius:7px;overflow:hidden"><div style="width:62%;background:#3b82f6"></div><div style="width:38%;background:#ec4899"></div></div><p class="s">Erkak 62% · Ayol 38%</p></div><div class="nav"><i class="on"></i><i></i><i></i><i></i></div></div></div><div class="phone p2"><div class="scr"><div class="r"><p class="t" style="flex:1">Tekshiruv</p><span class="nb">3</span></div>
+<div class="cardu"><div class="r"><p class="t" style="flex:1">Logo ko‘rindi</p><p class="t" style="color:#2b7a10">86%</p></div><div class="ub"><i style="width:86%"></i></div><p class="s">To‘lov shu foizga qarab</p></div>
+<div class="cardu"><p class="s" style="color:#2b7a10;font-weight:700">✓ “Reklama” belgisi bor</p><p class="s" style="color:#2b7a10;font-weight:700">✓ Klip joyida</p><p class="s" style="color:#2b7a10;font-weight:700">✓ Video ochiq</p></div>
+<div class="cardu"><div class="r"><p class="t" style="flex:1">Ishonch balli</p><span class="nb">4</span></div><p class="t" style="font-size:40px;color:#2b7a10">98%</p><p class="s">Ogohlantirish: 0/3</p></div><div class="cardu"><div class="r"><p class="t" style="flex:1">Telegram post</p><p class="t" style="color:#2b7a10">12/48 soat</p></div><div class="ub"><i style="width:25%"></i></div></div><div class="nav"><i class="on"></i><i></i><i></i><i></i></div></div></div>
+</section><section id="product" class="dark hasfoot">
+<p class="kicker">Mahsulot</p>
+<h2>Prototip tayyor — asosiy funksiyalar</h2>
+<div class="grid4">
+<div class="card d1"><div class="ic">✓</div><h3>Ko‘rishlarni tekshirish</h3><p class="mut" style="font-size:26px">API orqali sanash, bot filtri</p></div>
+<div class="card d2"><div class="ic">$</div><h3>Escrow to‘lov</h3><p class="mut" style="font-size:26px">Payme/Click · Stripe orqali, qoldiq qaytadi</p></div>
+<div class="card d3"><div class="ic">AI</div><h3>AI tekshiruv</h3><p class="mut" style="font-size:26px">Klip joyi, “Reklama” belgisi</p></div>
+<div class="card d4"><div class="ic">●</div><h3>Jonli kuzatuv</h3><p class="mut" style="font-size:26px">Ko‘rish, obunachi, bosish</p></div>
+<div class="card d1"><div class="ic">★</div><h3>Ishonch balli</h3><p class="mut" style="font-size:26px">Strike: ogohlantirish → blok</p></div>
+<div class="card d2"><div class="ic">⚖</div><h3>Adolatli narx</h3><p class="mut" style="font-size:26px">Soha va platforma bo‘yicha RPM</p></div>
+<div class="card d3"><div class="ic">💬</div><h3>Xavfsiz chat</h3><p class="mut" style="font-size:26px">Kontaktlar avtomatik yashiriladi</p></div>
+<div class="card d4"><div class="ic">3</div><h3>3 til</h3><p class="mut" style="font-size:26px">O‘zbek, rus, ingliz</p></div>
+</div>
+<div class="foot"><span>Viewfy</span><span>5</span></div>
+</section><section id="adtypes" class="hasfoot">
+<p class="kicker">Reklama formatlari</p>
+<h2>Platforma qoidalariga to‘liq mos</h2><p class="lead mut" style="margin-top:-20px">Reklama formati har bir platformaning siyosatiga moslashgan — bloger kanali xavf ostida qolmaydi</p>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:start"><div class="card d1" style="padding:32px;gap:14px"><div style="width:60px;height:60px;border-radius:18px;background:#ef4444"></div><h3 style="font-size:36px">YouTube</h3><p class="mut" style="font-size:24px">Shorts · Uzun video · Strim</p><hr style="border:none;border-top:2px solid #e4ecdc;margin:4px 0"><p style="font-size:26px;font-weight:700">Bloger o‘zi gapiradi</p><p class="mut" style="font-size:24px">kirish 5–10 s yoki 30–60 s</p><p style="font-size:24px;font-weight:700;color:#2b7a10;background:#e3f6d4;border-radius:12px;padding:8px 12px">✓ Paid promotion</p></div><div class="card d2" style="padding:32px;gap:14px"><div style="width:60px;height:60px;border-radius:18px;background:#e1306c"></div><h3 style="font-size:36px">Instagram</h3><p class="mut" style="font-size:24px">Reels</p><hr style="border:none;border-top:2px solid #e4ecdc;margin:4px 0"><p style="font-size:26px;font-weight:700">Boshida / o‘rtasida</p><p class="mut" style="font-size:24px">3 yoki 5 s, yoki integratsiya</p><p style="font-size:24px;font-weight:700;color:#2b7a10;background:#e3f6d4;border-radius:12px;padding:8px 12px">✓ Paid partnership</p></div><div class="card d3" style="padding:32px;gap:14px"><div style="width:60px;height:60px;border-radius:18px;background:#111411"></div><h3 style="font-size:36px">TikTok</h3><p class="mut" style="font-size:24px">Video</p><hr style="border:none;border-top:2px solid #e4ecdc;margin:4px 0"><p style="font-size:26px;font-weight:700">Boshida / o‘rtasida</p><p class="mut" style="font-size:24px">3 yoki 5 s, yoki integratsiya</p><p style="font-size:24px;font-weight:700;color:#2b7a10;background:#e3f6d4;border-radius:12px;padding:8px 12px">✓ Branded content</p></div><div class="card d4" style="padding:32px;gap:14px"><div style="width:60px;height:60px;border-radius:18px;background:#229ed9"></div><h3 style="font-size:36px">Telegram</h3><p class="mut" style="font-size:24px">Post</p><hr style="border:none;border-top:2px solid #e4ecdc;margin:4px 0"><p style="font-size:26px;font-weight:700">Tayyor post</p><p class="mut" style="font-size:24px">brend matni, 48 soat</p><p style="font-size:24px;font-weight:700;color:#2b7a10;background:#e3f6d4;border-radius:12px;padding:8px 12px">✓ #reklama</p></div><div class="card d5" style="padding:32px;gap:14px"><div style="width:60px;height:60px;border-radius:18px;background:#9146ff"></div><h3 style="font-size:36px">Twitch</h3><p class="mut" style="font-size:24px">Strim</p><hr style="border:none;border-top:2px solid #e4ecdc;margin:4px 0"><p style="font-size:26px;font-weight:700">Logo, klip yoki eslatma</p><p class="mut" style="font-size:24px">strim davomida</p><p style="font-size:24px;font-weight:700;color:#2b7a10;background:#e3f6d4;border-radius:12px;padding:8px 12px">✓ Branded Content</p></div></div>
+<p class="mut" style="font-size:28px">Har bir reklamada platformaning majburiy belgisi bo‘ladi, Viewfy uni tekshiradi. YouTube’da tayyor klip va logotip qo‘yilmaydi — bu bloger kanalini himoya qiladi.</p>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span></span><span>9</span></div>
+</section><section id="market" class="dark hasfoot">
+<p class="kicker">Bozor</p>
+<h2>O‘zbekiston inflyuenser-marketingi tez o‘smoqda</h2>
+<div class="grid3">
+<div class="card d1"><p class="big ac">$100M+</p><p class="mut">Telegram, Instagram va YouTube blogerlari orqali reklama bozorining yillik aylanmasi</p></div>
+<div class="card d2"><p class="big ac">2 000+</p><p class="mut">Soliq qo‘mitasi tahlilida aniqlangan faol blogerlar soni</p></div>
+<div class="card d3"><p class="big ac">1%</p><p class="mut">Bozorning 1% i ham Viewfy uchun yiliga $1M aylanma degani</p></div>
+</div>
+<p class="mut">Keyingi qadam: Qozog‘iston va MDH — o‘xshash til, Telegram va bloger madaniyati.</p>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#5ed21c">fy</span></span> · Manbalar: daryo.uz, anhor.uz (2026)</span><span>10</span></div>
+</section><section id="model" class="hasfoot">
+<p class="kicker">Biznes model</p>
+<h2>Har bir to‘lovdan 15% komissiya</h2>
+<div class="row" style="gap:32px;align-items:stretch">
+<div class="card d1" style="flex:1"><h3>Misol: RPM $5, 20 000 ko‘rish</h3>
+<p style="font-size:34px">Brend to‘laydi: <b>$100</b></p>
+<div class="bar"><i style="width:100%"></i></div>
+<p style="font-size:30px">Blogerga: <b>$85</b> · Viewfy: <b style="color:#2b7a10">$15</b></p>
+<div class="bar"><i style="width:85%"></i></div></div>
+<div class="card d2" style="flex:1"><h3>Narxlar bozor darajasida</h3>
+<p>Viewfy: <b>$1.4–8.4</b> / 1000 ko‘rish</p>
+<p class="mut">YouTube reklamasi: ~$9.29 (Shorts ~$4)</p>
+<p class="mut">Instagram reklamasi: $6–10</p>
+<p class="mut">Telegram Ads: o‘rtacha ~€0.49</p></div>
+</div>
+<p class="mut">Keyinchalik: brendlar uchun Pro obuna, blogerlar uchun “top”ga chiqish.</p>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span> · Manbalar: Strike Social, Top Growth Marketing, Spilno Agency (2026)</span><span>11</span></div>
+</section><section id="competition" class="hasfoot">
+<p class="kicker">Raqobat</p>
+<h2>Ko‘rishga to‘lov + kafolat — faqat bizda</h2>
+<table>
+<tr><th></th><th>Ko‘rishga to‘lov</th><th>Pul kafolati</th><th>5 platforma</th><th>O‘zbek tili</th></tr>
+<tr><td><b>Agentliklar</b> (FACES, Tanish-Bilish)</td><td class="n">Yo‘q</td><td class="n">Qisman</td><td class="y">Ha</td><td class="y">Ha</td></tr>
+<tr><td><b>Blogix</b> (Telegram katalog)</td><td class="n">Yo‘q</td><td class="y">Ha</td><td class="n">Telegram</td><td class="y">Ha</td></tr>
+<tr><td><b>Telega.in</b> (MDH)</td><td class="n">Yo‘q</td><td class="y">Ha</td><td class="n">Telegram</td><td class="n">Yo‘q</td></tr>
+<tr><td><b>YouTube / Meta reklamasi</b></td><td class="y">Ha</td><td class="y">Ha</td><td class="n">Faqat o‘zi</td><td class="n">Qisman</td></tr>
+<tr class="us"><td>Viewfy</td><td class="y">Ha</td><td class="y">Ha</td><td class="y">Ha</td><td class="y">Ha</td></tr>
+</table>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span> · Raqobatchilar haqidagi ma’lumot ochiq manbalardan, taxminiy</span><span>12</span></div>
+</section><section id="faq" class="dark hasfoot" style="gap:32px">
+<p class="kicker">Investor savollari</p>
+<h2>Eng ko‘p beriladigan savollar</h2>
+<div class="grid2" style="gap:24px">
+<div class="card d1" style="padding:36px"><h3 style="font-size:32px">YouTube yoki Instagram o‘zi qilsa-chi?</h3><p class="mut" style="font-size:26px">Ular faqat o‘z platformasini sotadi. Biz 5 platformani, Telegram’ni ham, bitta joyda va mahalliy to‘lov bilan beramiz.</p></div>
+<div class="card d2" style="padding:36px"><h3 style="font-size:32px">Bloger ilovani chetlab o‘tsa?</h3><p class="mut" style="font-size:26px">Chatda kontaktlar yashiriladi. Pul kafolati, statistika va reyting faqat ilova ichida ishlaydi.</p></div>
+<div class="card d3" style="padding:36px"><h3 style="font-size:32px">Soxta ko‘rishlar-chi?</h3><p class="mut" style="font-size:26px">API orqali sanash, bot filtri, AI tekshiruv va strike tizimi. Shubhali bo‘lsa, pul to‘xtatiladi.</p></div>
+<div class="card d4" style="padding:36px"><h3 style="font-size:32px">Nega aynan hozir?</h3><p class="mut" style="font-size:26px">Reklama markirovkasi va bloger soliqlari joriy etilmoqda — bozorga shaffof platforma kerak.</p></div>
+</div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#5ed21c">fy</span></span></span><span>13</span></div>
+</section><section id="gtm" class="hasfoot">
+<p class="kicker">Bozorga chiqish</p>
+<h2>Avval blogerlar, keyin brendlar</h2>
+<div class="grid3">
+<div class="card d1"><div class="ic">1</div><h3>Qo‘lda yig‘ish</h3><p class="mut">Birinchi 100 blogerni shaxsan taklif qilamiz: birinchi ish uchun bonus.</p></div>
+<div class="card d2"><div class="ic">2</div><h3>Birinchi brendlar</h3><p class="mut">Kichik biznesga birinchi kampaniyaga 20% keshbek. Natijani raqamda ko‘rsatamiz.</p></div>
+<div class="card d3"><div class="ic">3</div><h3>Tavsiya effekti</h3><p class="mut">Referal bonus, IT Park tadbirlari, blogerlarning o‘zi Viewfy haqida gapiradi.</p></div>
+</div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span></span><span>14</span></div>
+</section><section id="acq" class="hasfoot">
+<p class="kicker">Ishga tushgandan keyingi 3 oy</p>
+<h2>$6 000 marketing → 300 bloger, 50 brend</h2>
+<table>
+<tr><th>Kanal</th><th>Byudjet</th><th>Natija</th><th>1 foydalanuvchi narxi</th></tr>
+<tr><td>Telegram va Instagram target reklama</td><td>$1 500</td><td>~150 bloger</td><td>~$10</td></tr>
+<tr><td>10 ta mikrobloger Viewfy haqida post</td><td>$1 500</td><td>~100 bloger</td><td>~$15</td></tr>
+<tr><td>Referal bonus ($3 har bir do‘stga)</td><td>$300</td><td>~50 bloger</td><td>$6</td></tr>
+<tr><td>Brendlarga birinchi kampaniya keshbeki</td><td>$1 500</td><td>~50 brend</td><td>~$30</td></tr>
+<tr><td>Tadbirlar va to‘g‘ridan-to‘g‘ri sotuv</td><td>$700</td><td>brendlar bilan uchrashuv</td><td>—</td></tr>
+<tr><td>Zaxira</td><td>$500</td><td></td><td></td></tr>
+</table>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span> · Taxminiy reja — natijalar sinov davomida aniqlanadi</span><span>15</span></div>
+</section><section id="forecast" class="dark hasfoot">
+<p class="kicker">Moliyaviy prognoz</p>
+<h2>3 yilda $5M aylanma, $750K daromad</h2>
+<div class="row" style="gap:48px;align-items:flex-end;height:430px">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:14px"><p style="font-size:30px;font-weight:700">$180K</p><div class="anim d1" style="width:100%;height:28px;background:#5ed21c;border-radius:14px 14px 0 0"></div><p class="mut">1-yil</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:14px"><p style="font-size:30px;font-weight:700">$1.5M</p><div class="anim d2" style="width:100%;height:110px;background:#5ed21c;border-radius:14px 14px 0 0"></div><p class="mut">2-yil</p></div>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:14px"><p style="font-size:30px;font-weight:700">$5M</p><div class="anim d3" style="width:100%;height:300px;background:#5ed21c;border-radius:14px 14px 0 0"></div><p class="mut">3-yil (+MDH)</p></div>
+<div style="flex:1.3;display:flex;flex-direction:column;gap:18px">
+<p><b>Daromad (15%)</b></p><p class="mut">1-yil: $27K</p><p class="mut">2-yil: $225K</p><p style="color:#5ed21c;font-weight:700">3-yil: $750K</p><p class="mut">O‘zini qoplash: ~18–20-oy</p></div>
+</div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#5ed21c">fy</span></span> · Ustunlar — platformadagi reklama aylanmasi (GMV). Taxminiy prognoz.</span><span>16</span></div>
+</section><section id="ask" class="hasfoot" style="gap:36px">
+<p class="kicker">Investitsiya</p>
+<div class="row" style="gap:64px;align-items:flex-start">
+<div style="width:620px;display:flex;flex-direction:column;gap:20px">
+<h2>So‘raymiz</h2><p class="big ac" style="font-size:150px">$90 000</p>
+<p class="lead mut" style="font-size:32px">≈ 1,15 mlrd so‘m · 12 oylik ish uchun</p>
+<span class="pill">Ulush: 15% [kelishiladi]</span></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div><div class="row" style="justify-content:space-between"><p><b>Jamoa</b> (5 kishi)</p><p>$54 200</p></div><div class="bar"><i style="width:60%"></i></div></div>
+<div><div class="row" style="justify-content:space-between"><p><b>Marketing</b></p><p>$15 000</p></div><div class="bar"><i style="width:17%"></i></div></div>
+<div><div class="row" style="justify-content:space-between"><p><b>Zaxira</b></p><p>$7 000</p></div><div class="bar"><i style="width:8%"></i></div></div>
+<div><div class="row" style="justify-content:space-between"><p><b>Yuridik va to‘lov tizimi</b></p><p>$5 000</p></div><div class="bar"><i style="width:6%"></i></div></div>
+<div><div class="row" style="justify-content:space-between"><p><b>Server, AI, saqlash</b></p><p>$4 800</p></div><div class="bar"><i style="width:5%"></i></div></div>
+<div><div class="row" style="justify-content:space-between"><p><b>Jihoz va ofis</b></p><p>$4 000</p></div><div class="bar"><i style="width:4%"></i></div></div>
+</div></div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span> · Kurs ~12 800 so‘m/$ · taxminiy hisob</span><span>17</span></div>
+</section><section id="roadmap" class="dark hasfoot">
+<p class="kicker">Yo‘l xaritasi</p>
+<h2>12 oylik reja</h2>
+<div class="grid4">
+<div class="card d1"><p class="pill">1–3 oy</p><h3>MVP</h3><p class="mut" style="font-size:26px">Jamoa, yuridik shaxs, YouTube + Telegram, to‘lov tizimi</p></div>
+<div class="card d2"><p class="pill">4–6 oy</p><h3>Beta</h3><p class="mut" style="font-size:26px">100 bloger, 20 brend, Instagram va TikTok API</p></div>
+<div class="card d3"><p class="pill">7–9 oy</p><h3>O‘sish</h3><p class="mut" style="font-size:26px">AI tekshiruv, jonli kuzatuv, 300 bloger</p></div>
+<div class="card hi d4"><p class="pill" style="background:#0d130b">10–12 oy</p><h3>Masshtab</h3><p class="mut" style="font-size:26px">500 bloger, 80 brend, Qozog‘iston, keyingi raund</p></div>
+</div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#5ed21c">fy</span></span></span><span>18</span></div>
+</section><section id="team" class="hasfoot">
+<p class="kicker">Jamoa</p>
+<h2>Asoschi va yollanadigan jamoa</h2>
+<div class="grid3">
+<div class="card hi d1"><div class="ic">BX</div><h3>Bexruz Xasanboyev</h3><p class="mut">Asoschi · Designer &amp; Motion Creator. Mahsulot dizayni va prototipni yaratgan.</p></div>
+<div class="card d2"><div class="ic">+</div><h3>CTO / backend</h3><p class="mut">API integratsiyalar, to‘lov, xavfsizlik. [Qidirilmoqda]</p></div>
+<div class="card d3"><div class="ic">+</div><h3>2 mobil dasturchi</h3><p class="mut">iOS va Android ilovasi (Flutter). [Qidirilmoqda]</p></div>
+</div>
+<div class="grid2"><div class="card d4" style="padding:32px"><h3 style="font-size:32px">Marketing va sotuv menejeri</h3><p class="mut" style="font-size:26px">Brendlar bilan ishlash, 3-oydan</p></div><div class="card d5" style="padding:32px"><h3 style="font-size:32px">Moderator / qo‘llab-quvvatlash</h3><p class="mut" style="font-size:26px">Shikoyatlar va tekshiruv, 6-oydan</p></div></div>
+<div class="foot"><span class="brandfoot"><svg width="36" height="36" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px">view<span style="color:#2b7a10">fy</span></span></span><span>19</span></div>
+</section><section id="thanks" class="dark" style="justify-content:center;gap:40px">
+<div class="row anim" style="align-items:center;gap:24px"><svg width="120" height="120" viewBox="0 0 200 200" role="img" aria-label="Viewfy logotipi"><rect width="200" height="200" rx="52" fill="#5ED21C"/><path d="M41 78 L87 148 L153 52" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="M115.6 58.9 L153 52 L159.9 89.4" fill="none" stroke="#111411" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></svg><p style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:88px;line-height:1;letter-spacing:-0.03em;color:#eef3ea">view<span style="color:#5ed21c">fy</span></p></div>
+<h1 class="anim d1" style="width:1560px;font-size:110px">Grow every view.<br><span style="color:#5ed21c">Birga o‘samiz.</span></h1>
+<p class="lead mut anim d2">$90 000 · 12 oy · 500 bloger va 80 brend</p>
+<div class="row anim d3" style="gap:16px"><span class="pill">Telegram: @fin_bexruz</span><span class="pill" style="background:#5ed21c;color:#0a0f09">Demo: ishlaydigan prototip</span></div>
+</section></body></html>
